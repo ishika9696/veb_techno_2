@@ -1,0 +1,149 @@
+[
+  {
+    "slug": "fintech-dashboard",
+    "title": "Nova Financial Dashboard",
+    "client": "Nova Capital Group",
+    "category": "Web Development",
+    "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80"
+    ],
+    "problem": "Nova Capital Group, a mid-tier investment firm, was drowning in spreadsheets and disconnected tools. Their portfolio managers spent 3+ hours daily aggregating data across platforms, leading to delayed decisions and compliance risks. They needed a unified dashboard to visualize real-time portfolio performance.",
+    "solution": "We built a real-time financial dashboard with live market data feeds, automated portfolio analytics, and regulatory compliance tracking. The platform features interactive charts, customizable watchlists, risk assessment tools, and automated report generation — all secured with bank-grade encryption and role-based access controls.",
+    "techStack": ["React", "TypeScript", "Node.js", "PostgreSQL", "Redis", "WebSocket", "AWS", "D3.js"],
+    "results": [
+      { "label": "Faster Reporting", "value": "85%" },
+      { "label": "User Adoption", "value": "98%" },
+      { "label": "Data Accuracy", "value": "99.9%" },
+      { "label": "Time Saved Daily", "value": "3hrs" }
+    ],
+    "testimonial": {
+      "quote": "Veb Techno transformed how we manage portfolios. The dashboard they built isn't just a tool — it's become the central nervous system of our operations.",
+      "author": "Sarah Chen",
+      "role": "CTO, Nova Capital Group"
+    },
+    "featured": true
+  },
+  {
+    "slug": "healthtech-app",
+    "title": "MediTrack Patient App",
+    "client": "MediTrack Health",
+    "category": "Mobile App",
+    "coverImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
+      "https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=80",
+      "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80"
+    ],
+    "problem": "MediTrack Health's patient engagement was struggling. Patients missed appointments, forgot medications, and had no easy way to communicate with their care team. The existing web portal had a 12% adoption rate and received constant complaints about usability.",
+    "solution": "We designed and developed a cross-platform mobile app with intelligent appointment scheduling, medication reminders with adherence tracking, secure messaging with care providers, and telehealth video consultations. The app integrates with major EHR systems and uses push notifications for proactive health management.",
+    "techStack": ["Flutter", "Dart", "Firebase", "Node.js", "MongoDB", "WebRTC", "HL7 FHIR"],
+    "results": [
+      { "label": "Patient Adoption", "value": "73%" },
+      { "label": "Missed Appointments", "value": "-45%" },
+      { "label": "Patient Satisfaction", "value": "4.8★" },
+      { "label": "App Store Rating", "value": "4.7★" }
+    ],
+    "testimonial": {
+      "quote": "The app has fundamentally changed how our patients interact with their healthcare. The Veb Techno team understood our clinical workflows deeply.",
+      "author": "Dr. James Rodriguez",
+      "role": "Chief Medical Officer, MediTrack Health"
+    },
+    "featured": true
+  },
+  {
+    "slug": "ecommerce-platform",
+    "title": "Luxe Market E-commerce",
+    "client": "Luxe Market Co.",
+    "category": "Web Development",
+    "coverImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&q=80"
+    ],
+    "problem": "Luxe Market Co., a premium lifestyle brand, was losing 40% of potential sales due to a clunky, slow-loading Shopify theme that couldn't handle their 5,000+ product catalog. Mobile conversion rates were especially poor at 0.8%, well below the industry average of 2.5%.",
+    "solution": "We built a headless e-commerce platform using Next.js with a custom Shopify Storefront API integration. The result is a blazing-fast, visually stunning shopping experience with advanced filtering, AI-powered product recommendations, one-click checkout, and a fully custom CMS for marketing content. Page load times dropped from 6s to under 1.5s.",
+    "techStack": ["Next.js", "TypeScript", "Shopify Storefront API", "Algolia", "Stripe", "Vercel", "Sanity CMS"],
+    "results": [
+      { "label": "Load Time", "value": "1.2s" },
+      { "label": "Mobile Conversion", "value": "+210%" },
+      { "label": "Revenue Growth", "value": "+65%" },
+      { "label": "Bounce Rate", "value": "-38%" }
+    ],
+    "testimonial": {
+      "quote": "Our new storefront is the best investment we've made. The speed alone boosted conversions, but the design quality keeps customers coming back.",
+      "author": "Amanda Foster",
+      "role": "VP of Digital, Luxe Market Co."
+    },
+    "featured": true
+  },
+  {
+    "slug": "logistics-platform",
+    "title": "FleetPulse Logistics System",
+    "client": "FleetPulse Logistics",
+    "category": "Cloud & DevOps",
+    "coverImage": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+      "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1200&q=80",
+      "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1200&q=80"
+    ],
+    "problem": "FleetPulse Logistics managed 2,000+ delivery vehicles with a legacy on-premise system that crashed during peak periods. Route planning was manual, fuel costs were spiraling, and customers had no visibility into delivery status — resulting in a 15% customer churn rate.",
+    "solution": "We migrated their entire operations to a cloud-native architecture on AWS with real-time GPS tracking, AI-powered route optimization, predictive maintenance alerts, and a customer-facing delivery tracking portal. The system handles 50,000+ daily deliveries with 99.97% uptime.",
+    "techStack": ["Go", "Kubernetes", "AWS", "Terraform", "PostgreSQL", "Redis", "Apache Kafka", "React"],
+    "results": [
+      { "label": "System Uptime", "value": "99.97%" },
+      { "label": "Fuel Costs", "value": "-28%" },
+      { "label": "Delivery Speed", "value": "+35%" },
+      { "label": "Customer Churn", "value": "-60%" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "ai-analytics-saas",
+    "title": "InsightAI Analytics Platform",
+    "client": "InsightAI Corp",
+    "category": "Web Development",
+    "coverImage": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1200&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+    ],
+    "problem": "InsightAI had a powerful ML engine but a terrible user interface. Data scientists loved it; business users couldn't navigate it. They were losing enterprise deals because competitors had more polished, business-friendly dashboards despite inferior analytics capabilities.",
+    "solution": "We redesigned the entire platform from the ground up with a focus on non-technical users. Natural language querying lets anyone ask questions in plain English, interactive visualizations make complex data intuitive, and automated insight generation proactively surfaces trends. We also built an embeddable analytics SDK for white-label integrations.",
+    "techStack": ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Apache Superset", "Docker", "GCP"],
+    "results": [
+      { "label": "Enterprise Deals", "value": "+120%" },
+      { "label": "User Engagement", "value": "+85%" },
+      { "label": "NPS Score", "value": "72" },
+      { "label": "Onboarding Time", "value": "-70%" }
+    ],
+    "featured": false
+  },
+  {
+    "slug": "brand-refresh",
+    "title": "Meridian Brand & Website Refresh",
+    "client": "Meridian Partners",
+    "category": "UI/UX Design",
+    "coverImage": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80",
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&q=80",
+      "https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1200&q=80"
+    ],
+    "problem": "Meridian Partners, a 20-year-old consulting firm, had a dated website and brand identity that didn't reflect their modern advisory practice. They were losing talent to flashier competitors and struggling to attract millennial/Gen-Z clients who judged credibility by digital presence.",
+    "solution": "We executed a complete brand refresh — new visual identity, custom typography, photography direction, and a fully redesigned responsive website. The site features immersive case study pages, a thought leadership blog with newsletter integration, and an interactive team page that showcases the firm's diverse expertise.",
+    "techStack": ["Next.js", "TypeScript", "Figma", "Framer Motion", "Sanity CMS", "TailwindCSS", "Vercel"],
+    "results": [
+      { "label": "Inbound Leads", "value": "+90%" },
+      { "label": "Time on Site", "value": "+145%" },
+      { "label": "Applications", "value": "+60%" },
+      { "label": "Brand Perception", "value": "A+" }
+    ],
+    "featured": false
+  }
+]

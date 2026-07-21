@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What types of businesses do you work with?",
+    "answer": "We work with companies of all sizes — from early-stage startups building their first MVP to Fortune 500 enterprises modernizing legacy systems. Our sweet spot is mid-market companies ($5M–$500M revenue) who need enterprise-grade technology but want the agility and attention of a specialized agency. We've delivered projects across fintech, healthcare, e-commerce, logistics, and SaaS."
+  },
+  {
+    "question": "How long does a typical project take?",
+    "answer": "Project timelines depend on scope and complexity. A marketing website typically takes 4–6 weeks, a web application 8–16 weeks, and a mobile app 12–20 weeks. For larger enterprise projects, we work in phased sprints and deliver value incrementally. During our Discovery phase, we'll give you a detailed timeline with milestones — and we have a strong track record of hitting them."
+  },
+  {
+    "question": "Do you provide ongoing support after launch?",
+    "answer": "Absolutely. We offer flexible support packages ranging from basic maintenance (security updates, bug fixes, monitoring) to full managed services (feature development, performance optimization, 24/7 on-call). Most of our clients stay with us long after launch because we understand their systems deeply and can ship improvements faster than rebuilding tribal knowledge with a new team."
+  },
+  {
+    "question": "What is your development process like?",
+    "answer": "We follow an agile methodology with two-week sprints and transparent communication. Every project starts with a Discovery phase where we define requirements, architecture, and success metrics. During development, you'll have access to a real-time project dashboard, regular demo sessions, and a dedicated project manager. We ship working software early and iterate based on your feedback."
+  },
+  {
+    "question": "How do you handle project pricing?",
+    "answer": "We offer both fixed-price and time-and-materials engagement models. For well-defined projects with clear requirements, we provide a fixed quote so you know exactly what you'll pay. For more exploratory or evolving projects, time-and-materials gives you flexibility to adjust scope as you learn. Either way, we're transparent about costs — no hidden fees, no surprise invoices."
+  }
+]

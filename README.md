@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Veb Techno Inc — Premium IT Agency Website
 
-## Getting Started
+Flagship production-ready website for **Veb Techno Inc**, built with Next.js 14+ (App Router, React 19), Tailwind CSS, TypeScript, Framer Motion, and shadcn/ui.
 
-First, run the development server:
+## 🚀 Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Run the Development Server**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Production Build**:
+   ```bash
+   npm run build
+   npm run start
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Folder Structure
 
-## Learn More
+*   `app/` — App Router layouts, sitemaps, and pages (Home, About, Services, Portfolio, Blog, Careers, Contact).
+*   `components/` — Nav/Footer layout layout shells, section components, and shared components (forms, animation cards).
+*   `content/` — CMS-ready local JSON/MDX content for services, projects, team, testimonials, and blog posts.
+*   `lib/` — Configuration constants, form validations, and utility functions.
+*   `public/` — Shared assets, images, and icons.
+*   `styles/` — Global styling and design system tokens.
+*   `types/` — Structured TypeScript definitions.
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All custom design tokens (navy scale, electric indigo accent, custom fonts, spacing grid, border radius, shadows, animations, glassmorphism) are defined in:
+*   [styles/globals.css](styles/globals.css) using Tailwind CSS v4 `@theme inline` configuration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 Swapping Content / Adding a Headless CMS
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   **To edit static info**: Update files under `content/` (JSON and MDX files).
+*   **To swap for a headless CMS (e.g. Sanity, Contentful, Strapi)**:
+    1. Replace the file system fetches in `app/blog/page.tsx`, `app/blog/[slug]/page.tsx`, `app/services/[slug]/page.tsx`, and `app/portfolio/[slug]/page.tsx` with a CMS API client fetch.
+    2. Maintain the same data contracts defined in `types/index.ts`.

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Sarah Chen",
+    "role": "CTO",
+    "company": "Nova Capital Group",
+    "content": "Veb Techno transformed how we manage portfolios. The dashboard they built isn't just a tool — it's become the central nervous system of our operations. Their team understood our complex requirements immediately and delivered beyond expectations.",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
+  },
+  {
+    "name": "David Park",
+    "role": "CEO",
+    "company": "TechVentures Inc",
+    "content": "We've worked with many agencies, but Veb Techno stands apart. Their engineering quality is exceptional — clean code, thorough documentation, and they actually care about maintainability. Our product has been running flawlessly for 18 months.",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80"
+  },
+  {
+    "name": "Maria Santos",
+    "role": "Product Manager",
+    "company": "HealthFirst Digital",
+    "content": "The mobile app Veb Techno developed for us increased patient engagement by 73%. They navigated our strict HIPAA compliance requirements with ease and delivered a product that both patients and doctors genuinely enjoy using.",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80"
+  },
+  {
+    "name": "James Mitchell",
+    "role": "VP of Engineering",
+    "company": "ScaleOps",
+    "content": "Their DevOps team migrated our entire infrastructure to Kubernetes with zero downtime. Zero. Our costs dropped 40% and our deployment frequency went from weekly to multiple times a day. Phenomenal work.",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80"
+  },
+  {
+    "name": "Lisa Thompson",
+    "role": "CMO",
+    "company": "Luxe Market Co.",
+    "content": "The e-commerce platform Veb Techno built us is stunning. Our mobile conversion rate tripled, page load times dropped to under 2 seconds, and revenue is up 65% year-over-year. The ROI was visible within the first month.",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80"
+  },
+  {
+    "name": "Robert Huang",
+    "role": "Founder",
+    "company": "NexGen Robotics",
+    "content": "Veb Techno's consulting engagement saved us from a costly technology decision. They evaluated our architecture, identified critical bottlenecks, and proposed a migration path that was pragmatic and phased. Worth every penny.",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&q=80"
+  }
+]

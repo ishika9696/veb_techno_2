@@ -1,0 +1,382 @@
+[
+  {
+    "slug": "web-development",
+    "title": "Web Development",
+    "shortTitle": "Web Dev",
+    "description": "We build blazing-fast, scalable web applications using modern frameworks like React, Next.js, and Node.js — engineered for performance, accessibility, and growth.",
+    "longDescription": "From single-page applications to complex enterprise platforms, our web development team crafts robust, scalable solutions that deliver exceptional user experiences. We leverage server-side rendering, static generation, and edge computing to ensure your web presence is fast, secure, and SEO-optimized. Every project starts with a deep understanding of your business goals and ends with a product that exceeds expectations.",
+    "icon": "Globe",
+    "features": [
+      "Custom Web Applications & SaaS Platforms",
+      "Progressive Web Apps (PWAs)",
+      "E-commerce Solutions & Payment Integration",
+      "API Development & Third-party Integrations",
+      "Performance Optimization & Core Web Vitals",
+      "Headless CMS & Content Management Systems"
+    ],
+    "tools": [
+      { "name": "React" },
+      { "name": "Next.js" },
+      { "name": "TypeScript" },
+      { "name": "Node.js" },
+      { "name": "PostgreSQL" },
+      { "name": "Redis" },
+      { "name": "GraphQL" },
+      { "name": "TailwindCSS" }
+    ],
+    "process": [
+      { "step": "Requirements Analysis", "description": "Deep-dive into your business requirements, user personas, and technical constraints." },
+      { "step": "Architecture Design", "description": "Design scalable architecture with the right tech stack and infrastructure decisions." },
+      { "step": "UI/UX Implementation", "description": "Build pixel-perfect, responsive interfaces from approved designs." },
+      { "step": "Backend Development", "description": "Develop robust APIs, database schemas, and business logic." },
+      { "step": "Testing & QA", "description": "Comprehensive testing including unit, integration, e2e, and performance tests." },
+      { "step": "Deployment & Launch", "description": "Zero-downtime deployment with CI/CD pipelines and monitoring." }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Starter",
+        "price": "$5,000",
+        "description": "Perfect for landing pages, portfolios, and small business sites.",
+        "features": ["Up to 5 pages", "Responsive design", "Basic SEO", "Contact form", "CMS integration", "3 months support"]
+      },
+      {
+        "name": "Professional",
+        "price": "$15,000",
+        "description": "For growing businesses needing custom functionality and integrations.",
+        "features": ["Up to 20 pages", "Custom animations", "Advanced SEO", "Payment integration", "API development", "User authentication", "6 months support"],
+        "highlighted": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "description": "Full-scale platforms with complex requirements and dedicated support.",
+        "features": ["Unlimited pages", "Microservices architecture", "Real-time features", "Multi-tenant support", "Custom integrations", "Dedicated team", "12 months support"]
+      }
+    ],
+    "relatedProjects": ["fintech-dashboard", "ecommerce-platform"]
+  },
+  {
+    "slug": "mobile-app-development",
+    "title": "Mobile App Development",
+    "shortTitle": "Mobile Apps",
+    "description": "Native and cross-platform mobile applications for iOS and Android — built with Flutter, React Native, and Swift for seamless, high-performance experiences.",
+    "longDescription": "Our mobile development team creates elegant, high-performance apps that users love. Whether you need a native iOS app, an Android application, or a cross-platform solution, we deliver pixel-perfect interfaces with smooth animations and offline capabilities. From concept to App Store, we handle the entire lifecycle — design, development, testing, and ongoing updates.",
+    "icon": "Smartphone",
+    "features": [
+      "Native iOS & Android Development",
+      "Cross-platform with Flutter & React Native",
+      "Offline-first Architecture",
+      "Push Notifications & Real-time Updates",
+      "Biometric Authentication",
+      "App Store Optimization (ASO)"
+    ],
+    "tools": [
+      { "name": "Flutter" },
+      { "name": "React Native" },
+      { "name": "Swift" },
+      { "name": "Kotlin" },
+      { "name": "Firebase" },
+      { "name": "Xcode" }
+    ],
+    "process": [
+      { "step": "Discovery & Strategy", "description": "Define your app's core value proposition, target users, and key features." },
+      { "step": "Wireframing & Prototyping", "description": "Create interactive prototypes to validate user flows before development." },
+      { "step": "UI Design", "description": "Craft platform-native designs following iOS HIG and Material Design." },
+      { "step": "Development", "description": "Build with clean architecture patterns — MVVM, BLoC, or Redux." },
+      { "step": "QA & Beta Testing", "description": "Rigorous testing across devices and OS versions with beta rollouts." },
+      { "step": "Launch & Growth", "description": "App Store submission, ASO, analytics setup, and iterative improvements." }
+    ],
+    "pricingTiers": [
+      {
+        "name": "MVP",
+        "price": "$10,000",
+        "description": "Get your idea to market fast with a minimum viable product.",
+        "features": ["Single platform", "Core features", "Basic UI", "Push notifications", "Analytics", "3 months support"]
+      },
+      {
+        "name": "Growth",
+        "price": "$30,000",
+        "description": "Full-featured app for both platforms with premium UX.",
+        "features": ["iOS + Android", "Custom animations", "Offline support", "Payment integration", "Admin dashboard", "6 months support"],
+        "highlighted": true
+      },
+      {
+        "name": "Scale",
+        "price": "Custom",
+        "description": "Complex apps with real-time features and enterprise integrations.",
+        "features": ["All platforms", "Real-time sync", "AR/ML features", "Enterprise SSO", "Custom backend", "Dedicated team", "12 months support"]
+      }
+    ],
+    "relatedProjects": ["healthtech-app", "logistics-platform"]
+  },
+  {
+    "slug": "ui-ux-design",
+    "title": "UI/UX Design",
+    "shortTitle": "UI/UX",
+    "description": "Human-centered design that converts — we create intuitive, beautiful interfaces backed by user research, usability testing, and design systems that scale.",
+    "longDescription": "Great design isn't just about aesthetics — it's about solving problems. Our design team combines user research, interaction design, and visual craft to create interfaces that are both beautiful and functional. We build comprehensive design systems that ensure consistency across your entire product ecosystem, and we validate every decision with real user data.",
+    "icon": "Palette",
+    "features": [
+      "User Research & Persona Development",
+      "Wireframing & Interactive Prototyping",
+      "Visual Design & Brand Identity",
+      "Design System & Component Libraries",
+      "Usability Testing & A/B Testing",
+      "Accessibility Audits (WCAG 2.1 AA)"
+    ],
+    "tools": [
+      { "name": "Figma" },
+      { "name": "Adobe XD" },
+      { "name": "Principle" },
+      { "name": "Maze" },
+      { "name": "Hotjar" },
+      { "name": "Storybook" }
+    ],
+    "process": [
+      { "step": "Research", "description": "User interviews, competitor analysis, and heuristic evaluation." },
+      { "step": "Information Architecture", "description": "Site maps, user flows, and content hierarchy." },
+      { "step": "Wireframes", "description": "Low-fidelity wireframes to map layout and interactions." },
+      { "step": "Visual Design", "description": "High-fidelity mockups with your brand language applied." },
+      { "step": "Prototyping", "description": "Interactive prototypes for stakeholder review and user testing." },
+      { "step": "Design System", "description": "Documented component library for dev handoff and consistency." }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Essentials",
+        "price": "$3,000",
+        "description": "Quick design sprints for startups and small projects.",
+        "features": ["Wireframes", "Up to 10 screens", "Style guide", "1 revision round", "Figma handoff"]
+      },
+      {
+        "name": "Complete",
+        "price": "$12,000",
+        "description": "End-to-end design with research and a full design system.",
+        "features": ["User research", "Up to 30 screens", "Design system", "Interactive prototype", "Usability testing", "3 revision rounds"],
+        "highlighted": true
+      },
+      {
+        "name": "Ongoing",
+        "price": "$5,000/mo",
+        "description": "Embedded design partnership for product teams.",
+        "features": ["Dedicated designer", "Unlimited requests", "Design system maintenance", "A/B testing", "Monthly reports", "Priority support"]
+      }
+    ],
+    "relatedProjects": ["fintech-dashboard", "ecommerce-platform"]
+  },
+  {
+    "slug": "cloud-devops",
+    "title": "Cloud & DevOps",
+    "shortTitle": "Cloud",
+    "description": "Scalable cloud infrastructure, CI/CD pipelines, and DevOps automation on AWS, GCP, and Azure — built for reliability, security, and cost efficiency.",
+    "longDescription": "We design and implement cloud infrastructure that scales with your business. From containerized microservices to serverless architectures, our DevOps engineers ensure your applications are always available, automatically scaling to meet demand. We implement infrastructure as code, comprehensive monitoring, and automated disaster recovery — because downtime isn't an option.",
+    "icon": "Cloud",
+    "features": [
+      "Cloud Architecture & Migration",
+      "Kubernetes & Container Orchestration",
+      "CI/CD Pipeline Automation",
+      "Infrastructure as Code (Terraform)",
+      "Monitoring, Logging & Alerting",
+      "Cost Optimization & FinOps"
+    ],
+    "tools": [
+      { "name": "AWS" },
+      { "name": "Docker" },
+      { "name": "Kubernetes" },
+      { "name": "Terraform" },
+      { "name": "GitHub Actions" },
+      { "name": "Datadog" }
+    ],
+    "process": [
+      { "step": "Assessment", "description": "Audit current infrastructure, identify bottlenecks and security gaps." },
+      { "step": "Architecture", "description": "Design cloud-native architecture optimized for your workload." },
+      { "step": "Implementation", "description": "Build infrastructure as code with automated provisioning." },
+      { "step": "Migration", "description": "Zero-downtime migration with rollback strategies." },
+      { "step": "Optimization", "description": "Continuous monitoring, auto-scaling, and cost optimization." },
+      { "step": "Training", "description": "Knowledge transfer and documentation for your team." }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Foundations",
+        "price": "$8,000",
+        "description": "Cloud setup and basic CI/CD for small teams.",
+        "features": ["Cloud account setup", "CI/CD pipeline", "Basic monitoring", "SSL & security", "Documentation"]
+      },
+      {
+        "name": "Professional",
+        "price": "$25,000",
+        "description": "Full DevOps transformation with containerization.",
+        "features": ["Kubernetes cluster", "Multi-environment setup", "Infrastructure as Code", "Advanced monitoring", "Disaster recovery", "Load testing"],
+        "highlighted": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "description": "Large-scale multi-cloud and hybrid cloud solutions.",
+        "features": ["Multi-cloud strategy", "Service mesh", "FinOps implementation", "Compliance automation", "24/7 on-call support", "Dedicated SRE team"]
+      }
+    ],
+    "relatedProjects": ["logistics-platform", "ai-analytics-saas"]
+  },
+  {
+    "slug": "cybersecurity",
+    "title": "Cybersecurity",
+    "shortTitle": "Security",
+    "description": "Comprehensive security assessments, penetration testing, and compliance — protect your digital assets with proactive threat detection and response.",
+    "longDescription": "In an era of sophisticated cyber threats, security can't be an afterthought. Our cybersecurity team provides end-to-end security services, from vulnerability assessments and penetration testing to compliance audits and incident response planning. We help you build a security-first culture with training, policies, and automated security tooling integrated into your development workflow.",
+    "icon": "Shield",
+    "features": [
+      "Vulnerability Assessment & Penetration Testing",
+      "Security Architecture Review",
+      "Compliance (SOC 2, GDPR, HIPAA)",
+      "Incident Response Planning",
+      "Security Awareness Training",
+      "DevSecOps Integration"
+    ],
+    "tools": [
+      { "name": "Burp Suite" },
+      { "name": "OWASP ZAP" },
+      { "name": "Snyk" },
+      { "name": "SonarQube" },
+      { "name": "Vault" },
+      { "name": "Splunk" }
+    ],
+    "process": [
+      { "step": "Risk Assessment", "description": "Identify critical assets, threat vectors, and risk levels." },
+      { "step": "Security Audit", "description": "Comprehensive penetration testing and vulnerability scanning." },
+      { "step": "Remediation", "description": "Prioritized fixes with detailed remediation guidance." },
+      { "step": "Hardening", "description": "Implement security controls, encryption, and access policies." },
+      { "step": "Monitoring", "description": "Set up SIEM, intrusion detection, and automated alerting." },
+      { "step": "Compliance", "description": "Achieve and maintain regulatory compliance certifications." }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Assessment",
+        "price": "$5,000",
+        "description": "One-time security audit and vulnerability report.",
+        "features": ["Vulnerability scan", "Penetration test", "Security report", "Remediation roadmap", "Executive summary"]
+      },
+      {
+        "name": "Protection",
+        "price": "$15,000",
+        "description": "Comprehensive security program implementation.",
+        "features": ["Full audit", "Remediation support", "Security training", "Compliance preparation", "Incident response plan", "Quarterly reviews"],
+        "highlighted": true
+      },
+      {
+        "name": "Managed",
+        "price": "$8,000/mo",
+        "description": "Ongoing managed security services.",
+        "features": ["24/7 monitoring", "Threat detection", "Incident response", "Compliance management", "Monthly reports", "Dedicated CISO"]
+      }
+    ],
+    "relatedProjects": ["fintech-dashboard", "healthtech-app"]
+  },
+  {
+    "slug": "it-consulting",
+    "title": "IT Consulting",
+    "shortTitle": "Consulting",
+    "description": "Strategic technology advisory services — from digital transformation roadmaps to tech stack evaluations, we help you make informed technology decisions.",
+    "longDescription": "Technology decisions shape the future of your business. Our IT consultants bring decades of combined experience to help you navigate the complex landscape of modern technology. Whether you're planning a digital transformation, evaluating build-vs-buy decisions, or optimizing your existing tech stack, we provide actionable insights backed by data and industry expertise.",
+    "icon": "Lightbulb",
+    "features": [
+      "Digital Transformation Strategy",
+      "Technology Stack Evaluation",
+      "Architecture & Scalability Reviews",
+      "Vendor Selection & Management",
+      "Technical Due Diligence",
+      "Team Augmentation & Training"
+    ],
+    "tools": [
+      { "name": "Jira" },
+      { "name": "Confluence" },
+      { "name": "Miro" },
+      { "name": "Notion" },
+      { "name": "Lucidchart" },
+      { "name": "Power BI" }
+    ],
+    "process": [
+      { "step": "Discovery", "description": "Understand your business objectives, challenges, and current tech landscape." },
+      { "step": "Analysis", "description": "Deep technical analysis with gap identification and opportunity mapping." },
+      { "step": "Strategy", "description": "Develop actionable roadmap with prioritized initiatives." },
+      { "step": "Pilot", "description": "Validate recommendations with proof-of-concept implementations." },
+      { "step": "Implementation", "description": "Guide execution with embedded consultants and technical leadership." },
+      { "step": "Knowledge Transfer", "description": "Ensure your team is equipped to maintain and evolve the solutions." }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Advisory",
+        "price": "$3,000",
+        "description": "Strategic consultation and technology assessment.",
+        "features": ["2-day workshop", "Tech stack review", "Strategic roadmap", "Executive presentation", "30-day follow-up"]
+      },
+      {
+        "name": "Transformation",
+        "price": "$20,000",
+        "description": "Full digital transformation planning and guided execution.",
+        "features": ["Comprehensive audit", "Transformation roadmap", "Vendor evaluation", "Architecture design", "Change management", "Quarterly checkpoints"],
+        "highlighted": true
+      },
+      {
+        "name": "Embedded",
+        "price": "$12,000/mo",
+        "description": "On-demand CTO/VP Engineering advisory.",
+        "features": ["Fractional CTO", "Technical leadership", "Team mentoring", "Architecture reviews", "Hiring support", "Board-ready reporting"]
+      }
+    ],
+    "relatedProjects": ["ai-analytics-saas", "logistics-platform"]
+  },
+  {
+    "slug": "digital-marketing",
+    "title": "Digital Marketing & SEO",
+    "shortTitle": "Marketing",
+    "description": "Data-driven digital marketing strategies — SEO, content marketing, paid campaigns, and analytics that drive measurable growth and ROI.",
+    "longDescription": "We don't just build great products — we help people find them. Our digital marketing team combines technical SEO expertise with creative content strategy and data-driven paid campaigns to drive qualified traffic and conversions. Every strategy is grounded in analytics, with transparent reporting and continuous optimization to maximize your marketing ROI.",
+    "icon": "TrendingUp",
+    "features": [
+      "Technical SEO & Site Audits",
+      "Content Strategy & Copywriting",
+      "Paid Search & Social Campaigns",
+      "Conversion Rate Optimization (CRO)",
+      "Analytics & Attribution Modeling",
+      "Email Marketing Automation"
+    ],
+    "tools": [
+      { "name": "Google Analytics" },
+      { "name": "SEMrush" },
+      { "name": "Ahrefs" },
+      { "name": "Google Ads" },
+      { "name": "HubSpot" },
+      { "name": "Mailchimp" }
+    ],
+    "process": [
+      { "step": "Audit", "description": "Comprehensive analysis of your current digital presence and competitors." },
+      { "step": "Strategy", "description": "Define target audience, channels, and KPIs for measurable growth." },
+      { "step": "Content Creation", "description": "Develop high-quality content optimized for search and engagement." },
+      { "step": "Campaign Launch", "description": "Execute multi-channel campaigns with precise targeting." },
+      { "step": "Optimization", "description": "A/B testing, bid optimization, and conversion rate improvements." },
+      { "step": "Reporting", "description": "Transparent monthly reports with actionable insights and ROI analysis." }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Kickstart",
+        "price": "$2,000/mo",
+        "description": "Essential SEO and content marketing for growing businesses.",
+        "features": ["Technical SEO audit", "Keyword research", "4 blog posts/month", "Google My Business", "Monthly report"]
+      },
+      {
+        "name": "Growth",
+        "price": "$5,000/mo",
+        "description": "Full-funnel marketing with paid and organic channels.",
+        "features": ["Everything in Kickstart", "Paid campaign management", "Social media marketing", "Email automation", "CRO optimization", "Bi-weekly reports"],
+        "highlighted": true
+      },
+      {
+        "name": "Dominate",
+        "price": "$12,000/mo",
+        "description": "Enterprise marketing for market leaders.",
+        "features": ["Everything in Growth", "Content strategy", "Video marketing", "Influencer outreach", "Attribution modeling", "Dedicated strategist", "Weekly reports"]
+      }
+    ],
+    "relatedProjects": ["ecommerce-platform", "brand-refresh"]
+  }
+]

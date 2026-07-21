@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Alex Rivera",
+    "role": "Founder & CEO",
+    "bio": "Former engineering lead at a Fortune 500 tech company. Alex founded Veb Techno with a vision to bring enterprise-grade engineering quality to businesses of every size. 15+ years of experience in software architecture and team leadership.",
+    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/",
+      "twitter": "https://twitter.com/",
+      "github": "https://github.com/"
+    }
+  },
+  {
+    "name": "Priya Sharma",
+    "role": "VP of Engineering",
+    "bio": "Full-stack architect with deep expertise in distributed systems and cloud infrastructure. Priya leads our engineering team with a focus on code quality, mentorship, and building systems that scale to millions of users.",
+    "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/",
+      "github": "https://github.com/"
+    }
+  },
+  {
+    "name": "Marcus Johnson",
+    "role": "Head of Design",
+    "bio": "Award-winning designer who's worked with brands like Spotify, Airbnb, and Stripe. Marcus brings a human-centered approach to every project, blending aesthetic excellence with data-driven design decisions.",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/",
+      "twitter": "https://twitter.com/"
+    }
+  },
+  {
+    "name": "Elena Kowalski",
+    "role": "Director of Strategy",
+    "bio": "MBA from Wharton with 10+ years in digital strategy consulting. Elena helps clients navigate technology decisions with a business-first mindset, ensuring every technical investment drives measurable ROI.",
+    "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/",
+      "twitter": "https://twitter.com/"
+    }
+  }
+]
