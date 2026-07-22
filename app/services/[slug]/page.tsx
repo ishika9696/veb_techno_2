@@ -1,13 +1,68 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import type { Metadata } from "next";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  Check,
+  Globe,
+  Smartphone,
+  Palette,
+  Cloud,
+  Shield,
+  Lightbulb,
+  TrendingUp,
+  Code,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import services from "@/content/services.json";
 import projects from "@/content/projects.json";
+import { siteConfig } from "@/lib/constants";
 import CTABanner from "@/components/sections/CTABanner";
+
+/** Individual icon map — avoids importing the entire lucide-react barrel (~300KB) */
+const iconMap: Record<string, LucideIcon> = {
+  Globe,
+  Smartphone,
+  Palette,
+  Cloud,
+  Shield,
+  Lightbulb,
+  TrendingUp,
+  Code,
+};
 
 interface PageProps {
   params: Promise<{ slug: string }> | { slug: string };
+}
+
+/* ── SEO: Per-service metadata ── */
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const service = services.find((s) => s.slug === resolvedParams.slug);
+  if (!service) return {};
+
+  const title = `${service.title} Services`;
+  const description = service.description;
+  const url = `${siteConfig.url}/services/${service.slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${title} | ${siteConfig.name}`,
+      description,
+      url,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 export async function generateStaticParams() {
@@ -24,15 +79,61 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const IconComponent = (LucideIcons as any)[service.icon];
+  const IconComponent = iconMap[service.icon] || Code;
 
   /* Find related projects */
   const relatedProjects = projects.filter((p) =>
     service.relatedProjects.includes(p.slug)
   );
 
+  /* ── JSON-LD: Service schema ── */
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.longDescription,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    url: `${siteConfig.url}/services/${service.slug}`,
+  };
+
+  /* ── JSON-LD: BreadcrumbList ── */
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${siteConfig.url}/services` },
+      { "@type": "ListItem", position: 3, name: service.title, item: `${siteConfig.url}/services/${service.slug}` },
+    ],
+  };
+
   return (
     <div className="pt-24">
+      {/* ── JSON-LD Structured Data ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      {/* Breadcrumb navigation */}
+      <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
+          <li>/</li>
+          <li><Link href="/services" className="hover:text-foreground transition-colors">Services</Link></li>
+          <li>/</li>
+          <li className="text-foreground font-medium">{service.title}</li>
+        </ol>
+      </nav>
+
       {/* Header */}
       <section className="relative overflow-hidden py-16 lg:py-24">
         <div className="absolute inset-0 gradient-mesh opacity-40" />
@@ -48,7 +149,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-3xl">
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent-100 text-accent-600 dark:bg-accent-950 dark:text-accent-400">
-                {IconComponent ? <IconComponent size={24} /> : <LucideIcons.Code size={24} />}
+                <IconComponent size={24} />
               </div>
               <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 {service.title}
@@ -149,7 +250,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <ul className="space-y-3 mb-8 flex-1">
                   {tier.features.map((feat, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <LucideIcons.Check size={14} className="text-accent-500 shrink-0" />
+                      <Check size={14} className="text-accent-500 shrink-0" />
                       <span>{feat}</span>
                     </li>
                   ))}

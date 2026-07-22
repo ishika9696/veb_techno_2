@@ -1,12 +1,44 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
+import type { Metadata } from "next";
+import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import projects from "@/content/projects.json";
+import { siteConfig } from "@/lib/constants";
 import CTABanner from "@/components/sections/CTABanner";
 
 interface PageProps {
   params: Promise<{ slug: string }> | { slug: string };
+}
+
+/* ── SEO: Per-project metadata ── */
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
+  if (!project) return {};
+
+  const title = `${project.title} — Case Study`;
+  const description = `See how Veb Techno Inc helped ${project.client} with ${project.category.toLowerCase()}. ${project.problem.slice(0, 120)}…`;
+  const url = `${siteConfig.url}/portfolio/${project.slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${title} | ${siteConfig.name}`,
+      description,
+      url,
+      type: "article",
+      images: [{ url: project.coverImage, alt: `${project.title} case study` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [project.coverImage],
+    },
+  };
 }
 
 export async function generateStaticParams() {
@@ -23,8 +55,36 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  /* ── JSON-LD: BreadcrumbList ── */
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Portfolio", item: `${siteConfig.url}/portfolio` },
+      { "@type": "ListItem", position: 3, name: project.title, item: `${siteConfig.url}/portfolio/${project.slug}` },
+    ],
+  };
+
   return (
     <div className="pt-24">
+      {/* ── JSON-LD Structured Data ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      {/* Breadcrumb navigation */}
+      <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
+          <li>/</li>
+          <li><Link href="/portfolio" className="hover:text-foreground transition-colors">Portfolio</Link></li>
+          <li>/</li>
+          <li className="text-foreground font-medium">{project.title}</li>
+        </ol>
+      </nav>
+
       {/* Header */}
       <section className="relative overflow-hidden py-16 lg:py-24">
         <div className="absolute inset-0 gradient-mesh opacity-30" />
@@ -45,6 +105,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl mt-2">
                 {project.title}
               </h1>
+              {/* DEMO DATA: Replace client names with real clients before launch */}
               <p className="mt-2 text-lg text-muted-foreground">Client: {project.client}</p>
             </div>
           </div>
@@ -57,7 +118,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl border border-border shadow-lg">
             <Image
               src={project.images[0] || project.coverImage}
-              alt={project.title}
+              alt={`${project.title} — ${project.category} project hero image`}
               fill
               className="object-cover"
               priority
@@ -88,7 +149,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <div key={idx} className="relative aspect-video rounded-xl overflow-hidden border border-border">
                     <Image
                       src={img}
-                      alt={`${project.title} screenshot ${idx + 2}`}
+                      alt={`${project.title} — ${project.category} implementation detail ${idx + 1}`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -100,7 +161,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
             {/* Right Sidebar (Metrics & Tech) */}
             <div className="space-y-8">
-              {/* Metrics */}
+              {/* Metrics — DEMO DATA: Replace with real metrics before launch */}
               <div className="rounded-xl border border-border bg-muted/30 p-6">
                 <h3 className="font-heading text-lg font-semibold text-foreground mb-6">Key Results</h3>
                 <div className="space-y-6">

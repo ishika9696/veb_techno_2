@@ -1,11 +1,31 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import {
+  ArrowRight,
+  Globe,
+  Smartphone,
+  Palette,
+  Cloud,
+  Shield,
+  Lightbulb,
+  TrendingUp,
+  Code,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import AnimatedCard from "@/components/shared/AnimatedCard";
 import services from "@/content/services.json";
+
+/** Individual icon map — avoids importing the entire lucide-react barrel (~300KB) */
+const iconMap: Record<string, LucideIcon> = {
+  Globe,
+  Smartphone,
+  Palette,
+  Cloud,
+  Shield,
+  Lightbulb,
+  TrendingUp,
+  Code,
+};
 
 export default function ServicesGrid() {
   return (
@@ -19,13 +39,13 @@ export default function ServicesGrid() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
-            const IconComponent = (LucideIcons as any)[service.icon];
+            const IconComponent = iconMap[service.icon] || Code;
             return (
               <AnimatedCard key={service.slug} delay={i * 0.08}>
                 <Link href={`/services/${service.slug}`} className="block">
                   {/* Icon */}
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-100 text-accent-600 transition-colors group-hover:bg-accent-600 group-hover:text-white dark:bg-accent-950 dark:text-accent-400 dark:group-hover:bg-accent-600 dark:group-hover:text-white">
-                    {IconComponent ? <IconComponent size={24} /> : <LucideIcons.Code size={24} />}
+                    <IconComponent size={24} />
                   </div>
 
                   {/* Title */}

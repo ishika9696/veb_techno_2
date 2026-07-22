@@ -3,8 +3,8 @@
     "slug": "web-development",
     "title": "Web Development",
     "shortTitle": "Web Dev",
-    "description": "We build blazing-fast, scalable web applications using modern frameworks like React, Next.js, and Node.js — engineered for performance, accessibility, and growth.",
-    "longDescription": "From single-page applications to complex enterprise platforms, our web development team crafts robust, scalable solutions that deliver exceptional user experiences. We leverage server-side rendering, static generation, and edge computing to ensure your web presence is fast, secure, and SEO-optimized. Every project starts with a deep understanding of your business goals and ends with a product that exceeds expectations.",
+    "description": "Custom web development company specializing in blazing-fast, scalable web applications using React, Next.js, and Node.js — engineered for performance, accessibility, and business growth.",
+    "longDescription": "From single-page applications to complex enterprise platforms, our custom web development team crafts robust, scalable solutions that deliver exceptional user experiences. We leverage server-side rendering, static generation, and edge computing to ensure your web presence is fast, secure, and SEO-optimized. Whether you're a startup building an MVP in 4–6 weeks or an enterprise migrating a legacy system over several months, every project starts with a deep understanding of your business goals and ends with a product that exceeds expectations.",
     "icon": "Globe",
     "features": [
       "Custom Web Applications & SaaS Platforms",
@@ -59,8 +59,8 @@
     "slug": "mobile-app-development",
     "title": "Mobile App Development",
     "shortTitle": "Mobile Apps",
-    "description": "Native and cross-platform mobile applications for iOS and Android — built with Flutter, React Native, and Swift for seamless, high-performance experiences.",
-    "longDescription": "Our mobile development team creates elegant, high-performance apps that users love. Whether you need a native iOS app, an Android application, or a cross-platform solution, we deliver pixel-perfect interfaces with smooth animations and offline capabilities. From concept to App Store, we handle the entire lifecycle — design, development, testing, and ongoing updates.",
+    "description": "Mobile app development agency building native and cross-platform apps for iOS and Android — using Flutter, React Native, and Swift for seamless, high-performance mobile experiences.",
+    "longDescription": "Our mobile app development team creates elegant, high-performance apps that users love. Whether you need a native iOS app, an Android application, or a cross-platform solution, we deliver pixel-perfect interfaces with smooth animations and offline capabilities. From concept to App Store — typically 12–20 weeks for a full-featured app — we handle the entire lifecycle: design, development, testing, and ongoing updates. Ideal for startups launching their first app or enterprises extending their digital reach.",
     "icon": "Smartphone",
     "features": [
       "Native iOS & Android Development",
@@ -167,7 +167,7 @@
     "slug": "cloud-devops",
     "title": "Cloud & DevOps",
     "shortTitle": "Cloud",
-    "description": "Scalable cloud infrastructure, CI/CD pipelines, and DevOps automation on AWS, GCP, and Azure — built for reliability, security, and cost efficiency.",
+    "description": "Cloud migration services and DevOps automation on AWS, GCP, and Azure — scalable infrastructure, CI/CD pipelines, and Kubernetes orchestration built for reliability and cost efficiency.",
     "longDescription": "We design and implement cloud infrastructure that scales with your business. From containerized microservices to serverless architectures, our DevOps engineers ensure your applications are always available, automatically scaling to meet demand. We implement infrastructure as code, comprehensive monitoring, and automated disaster recovery — because downtime isn't an option.",
     "icon": "Cloud",
     "features": [
@@ -275,7 +275,7 @@
     "slug": "it-consulting",
     "title": "IT Consulting",
     "shortTitle": "Consulting",
-    "description": "Strategic technology advisory services — from digital transformation roadmaps to tech stack evaluations, we help you make informed technology decisions.",
+    "description": "Strategic IT consulting and technology advisory services — from digital transformation roadmaps and tech stack evaluations to fractional CTO support for informed technology decisions.",
     "longDescription": "Technology decisions shape the future of your business. Our IT consultants bring decades of combined experience to help you navigate the complex landscape of modern technology. Whether you're planning a digital transformation, evaluating build-vs-buy decisions, or optimizing your existing tech stack, we provide actionable insights backed by data and industry expertise.",
     "icon": "Lightbulb",
     "features": [
@@ -329,7 +329,7 @@
     "slug": "digital-marketing",
     "title": "Digital Marketing & SEO",
     "shortTitle": "Marketing",
-    "description": "Data-driven digital marketing strategies — SEO, content marketing, paid campaigns, and analytics that drive measurable growth and ROI.",
+    "description": "Data-driven digital marketing agency and SEO specialists — technical SEO, content marketing, paid campaigns, and analytics that drive measurable growth and ROI.",
     "longDescription": "We don't just build great products — we help people find them. Our digital marketing team combines technical SEO expertise with creative content strategy and data-driven paid campaigns to drive qualified traffic and conversions. Every strategy is grounded in analytics, with transparent reporting and continuous optimization to maximize your marketing ROI.",
     "icon": "TrendingUp",
     "features": [

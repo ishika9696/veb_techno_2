@@ -1,15 +1,19 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
-  ArrowRight,
   ExternalLink,
   Mail,
   Phone,
   MapPin,
 } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import NewsletterForm from "./NewsletterForm";
+
+/**
+ * Footer — Server Component
+ * Converted from client component. Framer Motion whileHover/whileTap replaced
+ * with CSS hover:/active: transforms. Newsletter form extracted to a tiny
+ * client component (NewsletterForm) since it needs onSubmit.
+ */
 
 const footerLinks = {
   services: [
@@ -29,6 +33,7 @@ const footerLinks = {
   ],
 };
 
+/* DEMO DATA: Replace these with real social media links before launch */
 const socialLinks = [
   { href: siteConfig.links.twitter, label: "Twitter" },
   { href: siteConfig.links.linkedin, label: "LinkedIn" },
@@ -59,22 +64,20 @@ export default function Footer() {
               businesses. Bold ideas, exceptional execution.
             </p>
 
-            {/* Social Links */}
+            {/* Social Links — CSS hover instead of Framer Motion whileHover */}
             <div className="mt-6 flex gap-2">
               {socialLinks.map((social) => (
-                <motion.a
+                <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex h-9 items-center justify-center gap-1.5 rounded-lg border border-border px-3 text-xs text-muted-foreground transition-colors hover:border-accent-500/50 hover:bg-accent-50 hover:text-accent-600 dark:hover:bg-accent-950 dark:hover:text-accent-400"
+                  className="flex h-9 items-center justify-center gap-1.5 rounded-lg border border-border px-3 text-xs text-muted-foreground transition-all duration-200 hover:border-accent-500/50 hover:bg-accent-50 hover:text-accent-600 hover:scale-110 hover:-translate-y-0.5 active:scale-95 dark:hover:bg-accent-950 dark:hover:text-accent-400"
                 >
                   <ExternalLink size={12} />
                   <span>{social.label}</span>
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>
@@ -122,6 +125,7 @@ export default function Footer() {
             <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">
               Contact
             </h3>
+            {/* DEMO DATA: Replace email, phone, and address with real info before launch */}
             <ul className="mt-4 space-y-3">
               <li>
                 <a
@@ -150,25 +154,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="mt-6">
               <p className="text-sm font-medium text-foreground">Stay updated</p>
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="mt-2 flex gap-2"
-              >
-                <input
-                  type="email"
-                  placeholder="you@email.com"
-                  className="flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 transition-colors"
-                />
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="rounded-lg bg-accent-600 px-3 py-2 text-white transition-colors hover:bg-accent-700"
-                  aria-label="Subscribe to newsletter"
-                >
-                  <ArrowRight size={16} />
-                </motion.button>
-              </form>
+              <NewsletterForm />
             </div>
           </div>
         </div>

@@ -2,12 +2,35 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Globe,
+  Smartphone,
+  Palette,
+  Cloud,
+  Shield,
+  Lightbulb,
+  TrendingUp,
+  Code,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import AnimatedCard from "@/components/shared/AnimatedCard";
 import CTABanner from "@/components/sections/CTABanner";
 import services from "@/content/services.json";
+
+/** Individual icon map — avoids importing the entire lucide-react barrel (~300KB) */
+const iconMap: Record<string, LucideIcon> = {
+  Globe,
+  Smartphone,
+  Palette,
+  Cloud,
+  Shield,
+  Lightbulb,
+  TrendingUp,
+  Code,
+};
 
 export default function ServicesPageContent() {
   return (
@@ -40,12 +63,12 @@ export default function ServicesPageContent() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => {
-              const IconComponent = (LucideIcons as any)[service.icon];
+              const IconComponent = iconMap[service.icon] || Code;
               return (
                 <AnimatedCard key={service.slug} delay={i * 0.05}>
                   <Link href={`/services/${service.slug}`} className="block">
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-100 text-accent-600 transition-colors group-hover:bg-accent-600 group-hover:text-white dark:bg-accent-950 dark:text-accent-400 dark:group-hover:bg-accent-600">
-                      {IconComponent ? <IconComponent size={24} /> : <LucideIcons.Code size={24} />}
+                      <IconComponent size={24} />
                     </div>
                     <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
                       {service.title}
@@ -56,7 +79,7 @@ export default function ServicesPageContent() {
                     <ul className="mb-6 space-y-2">
                       {service.features.slice(0, 3).map((feat, idx) => (
                         <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <LucideIcons.CheckCircle2 size={12} className="text-accent-500 shrink-0" />
+                          <CheckCircle2 size={12} className="text-accent-500 shrink-0" />
                           <span className="line-clamp-1">{feat}</span>
                         </li>
                       ))}

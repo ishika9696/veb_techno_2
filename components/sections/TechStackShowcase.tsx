@@ -1,8 +1,11 @@
-"use client";
-
 import { techStackItems } from "@/lib/constants";
 import SectionHeading from "@/components/shared/SectionHeading";
 
+/**
+ * TechStackShowcase — Server Component
+ * Removed "use client" since this component uses zero hooks or interactivity.
+ * The marquee animation is pure CSS (defined in globals.css).
+ */
 export default function TechStackShowcase() {
   /* Duplicate items for seamless infinite scroll */
   const items = [...techStackItems, ...techStackItems];

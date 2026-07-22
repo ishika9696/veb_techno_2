@@ -59,6 +59,7 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-200/50 bg-accent-50/80 px-4 py-1.5 text-sm font-medium text-accent-700 backdrop-blur-sm dark:border-accent-800/50 dark:bg-accent-950/80 dark:text-accent-300"
         >
           <Sparkles size={14} className="text-accent-500" />
+          {/* DEMO DATA: Replace with real trust signal before launch */}
           Trusted by 200+ companies worldwide
         </motion.div>
 
@@ -107,7 +108,7 @@ export default function Hero() {
             href="/contact"
             className="group relative flex items-center gap-2 overflow-hidden rounded-xl bg-accent-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent-700 hover:shadow-glow-lg"
           >
-            <span className="relative z-10">Start Your Project</span>
+            <span className="relative z-10">Get a Free Consultation</span>
             <ArrowRight
               size={16}
               className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
@@ -128,7 +129,7 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* ── Stats Row ── */}
+        {/* ── Stats Row ── DEMO DATA: Replace all stats with real numbers before launch */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

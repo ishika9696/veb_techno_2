@@ -1,21 +1,18 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, HelpCircle } from "lucide-react";
 
+/**
+ * NotFound — Server Component
+ * Converted from client component (Framer Motion) to server component with CSS animations.
+ * A 404 page should be as lightweight as possible.
+ */
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-surface px-4 text-center">
       <div className="absolute inset-0 gradient-mesh opacity-30" />
       <div className="absolute inset-0 grid-pattern opacity-10" />
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="relative z-10 max-w-md"
-      >
+      <div className="relative z-10 max-w-md animate-scale-in">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent-100 text-accent-600 dark:bg-accent-950 dark:text-accent-400">
           <HelpCircle size={32} />
         </div>
@@ -43,7 +40,7 @@ export default function NotFound() {
             Explore Services
           </Link>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

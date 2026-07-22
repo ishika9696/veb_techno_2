@@ -13,6 +13,7 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/vebtechno",
     instagram: "https://instagram.com/vebtechno",
   },
+  /* DEMO DATA: Replace all contact details with real business info before launch */
   contact: {
     email: "hello@vebtechno.com",
     phone: "+1 (555) 123-4567",
@@ -34,7 +35,7 @@ export const navItems: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-/* ─── Stats ─── */
+/* ─── Stats ─── DEMO DATA: Replace all stat values with real numbers before launch */
 export const stats: Stat[] = [
   { label: "Happy Clients", value: 200, suffix: "+" },
   { label: "Projects Delivered", value: 500, suffix: "+" },

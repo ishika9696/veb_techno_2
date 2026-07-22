@@ -97,12 +97,13 @@ export default async function BlogPage() {
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
-                        src={post.coverImage}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
+                          src={post.coverImage}
+                          alt={`${post.title} — ${post.category} article cover`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          {...(posts.indexOf(post) === 0 ? { priority: true } : {})}
+                        />
                       <div className="absolute left-3 top-3 rounded-full bg-accent-600/90 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
                         {post.category}
                       </div>

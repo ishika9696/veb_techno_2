@@ -18,5 +18,17 @@
   {
     "question": "How do you handle project pricing?",
     "answer": "We offer both fixed-price and time-and-materials engagement models. For well-defined projects with clear requirements, we provide a fixed quote so you know exactly what you'll pay. For more exploratory or evolving projects, time-and-materials gives you flexibility to adjust scope as you learn. Either way, we're transparent about costs — no hidden fees, no surprise invoices."
+  },
+  {
+    "question": "What technologies and frameworks do you specialize in?",
+    "answer": "Our core stack includes React, Next.js, TypeScript, and Node.js for web development; Flutter and React Native for mobile apps; and AWS, GCP, Kubernetes, and Terraform for cloud infrastructure. We also have deep expertise in PostgreSQL, Redis, GraphQL, and modern CI/CD tooling. We choose technologies based on your project's specific needs — not just what's trending."
+  },
+  {
+    "question": "Do you work with startups and early-stage companies?",
+    "answer": "Yes — startups are one of our favorite segments. We understand the pressure to move fast, validate ideas, and stretch budgets. Our MVP packages are designed to get a high-quality product to market quickly, and we can scale the team as your product gains traction. Many of our long-term enterprise clients started with us during their seed stage."
+  },
+  {
+    "question": "Can you help improve or modernize an existing application?",
+    "answer": "Definitely. A large portion of our work involves rescuing, refactoring, or modernizing existing codebases. Whether you need a performance audit, a migration from a legacy framework (e.g., AngularJS to React), or a complete architecture overhaul, we start with a thorough technical assessment and deliver a phased improvement plan that minimizes disruption to your users."
   }
 ]
