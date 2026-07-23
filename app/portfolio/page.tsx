@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { prisma } from "@/lib/prisma";
 import PortfolioContent from "./PortfolioContent";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Portfolio — Case Studies & Client Work",
@@ -12,6 +15,40 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PortfolioPage() {
-  return <PortfolioContent />;
+interface ProjectSelectItem {
+  slug: string;
+  title: string;
+  client: string;
+  category: string;
+  coverImage: string;
+  problem: string;
+  techStack: unknown;
+}
+
+export default async function PortfolioPage() {
+  let projects: ProjectSelectItem[] = [];
+  try {
+    projects = await prisma.portfolioProject.findMany({
+      where: { published: true },
+      orderBy: { createdAt: "desc" },
+      select: {
+        slug: true,
+        title: true,
+        client: true,
+        category: true,
+        coverImage: true,
+        problem: true,
+        techStack: true,
+      },
+    });
+  } catch (err) {
+    console.error("Failed to fetch portfolio projects:", err);
+  }
+
+  const serializedProjects = projects.map((p) => ({
+    ...p,
+    techStack: Array.isArray(p.techStack) ? (p.techStack as string[]) : [],
+  }));
+
+  return <PortfolioContent projects={serializedProjects} />;
 }

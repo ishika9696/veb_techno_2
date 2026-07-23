@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  hashedPassword String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("admin_users")
+}
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String    @default("")
+  content     String    @default("") // Rich text HTML from Tiptap
+  coverImage  String    @default("")
+  category    String    @default("General")
+  readTime    String    @default("5 min read")
+  author      String    @default("Veb Techno Team")
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("blog_posts")
+}
+
+model PortfolioProject {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  client      String   @default("")
+  category    String   @default("")
+  description String   @default("")
+  problem     String   @default("")
+  solution    String   @default("")
+  techStack   Json     @default("[]")   // string[]
+  coverImage  String   @default("")
+  gallery     Json     @default("[]")   // string[]
+  metrics     Json     @default("[]")   // { label: string, value: string }[]
+  testimonial Json?                      // { quote, author, role } | null
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("portfolio_projects")
+}
+
+model JobListing {
+  id               String   @id @default(cuid())
+  title            String
+  slug             String   @unique
+  department       String   @default("")
+  location         String   @default("")
+  employmentType   String   @default("Full-time")
+  description      String   @default("")
+  responsibilities Json     @default("[]") // string[]
+  requirements     Json     @default("[]") // string[]
+  published        Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("job_listings")
+}

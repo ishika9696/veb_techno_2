@@ -6,49 +6,6 @@ import SectionHeading from "@/components/shared/SectionHeading";
 import AnimatedCard from "@/components/shared/AnimatedCard";
 import CTABanner from "@/components/sections/CTABanner";
 
-/* DEMO DATA: Replace all job listings with real positions before launch */
-const jobs = [
-  {
-    title: "Senior Full-Stack Engineer",
-    department: "Engineering",
-    location: "New York, NY (Hybrid)",
-    type: "Full-time",
-    description: "Lead development of premium Next.js and Node.js solutions for fintech and e-commerce clients. Work directly with design and product teams.",
-    requirements: [
-      "5+ years of experience with React, TypeScript, and Node.js",
-      "Deep understanding of SQL (PostgreSQL) and caching layers (Redis)",
-      "Strong testing practices (Jest, Cypress, Playwright)",
-      "Experience with Next.js App Router and Server Components"
-    ]
-  },
-  {
-    title: "Lead UI/UX Designer",
-    department: "Design",
-    location: "Remote (US/Canada)",
-    type: "Full-time",
-    description: "Define design systems, visual languages, and micro-animations for enterprise applications. Run discovery workshops and prototype in Figma.",
-    requirements: [
-      "6+ years of UX/UI product design experience",
-      "Stunning portfolio showing interactions, user flows, and typography systems",
-      "Mastery of Figma component architecture and variables",
-      "Excellent client presentation and facilitation skills"
-    ]
-  },
-  {
-    title: "Cloud Platform SRE",
-    department: "DevOps",
-    location: "New York, NY (Hybrid)",
-    type: "Full-time",
-    description: "Architect secure and automated Kubernetes, Terraform, and cloud platform setups for scale. Maintain high availability and automate everything.",
-    requirements: [
-      "4+ years managing production AWS/GCP workloads",
-      "Strong expertise in Docker, Kubernetes, and Helm charts",
-      "Infrastructure as Code tooling mastery (Terraform)",
-      "CI/CD automation scripting in GitHub Actions or GitLab"
-    ]
-  }
-];
-
 /* DEMO DATA: Replace benefits with real company benefits before launch */
 const benefits = [
   { icon: Star, title: "Premium Compensation", description: "Competitive salaries, annual profit sharing, and performance bonuses." },
@@ -57,7 +14,21 @@ const benefits = [
   { icon: Sparkles, title: "Flexible Work", description: "Hybrid NYC office structure with optional fully remote days and flexible hours." }
 ];
 
-export default function CareersContent() {
+interface Job {
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  description: string;
+  requirements: string[];
+  responsibilities: string[];
+}
+
+interface CareersContentProps {
+  jobs: Job[];
+}
+
+export default function CareersContent({ jobs }: CareersContentProps) {
   const [activeJob, setActiveJob] = useState<number | null>(null);
 
   return (
@@ -113,50 +84,73 @@ export default function CareersContent() {
             subtitle="Find your next challenge. Apply directly by clicking below."
           />
 
-          <div className="space-y-4">
-            {jobs.map((job, idx) => (
-              <div
-                key={idx}
-                className="overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:border-accent-500/20"
-              >
-                <button
-                  onClick={() => setActiveJob(activeJob === idx ? null : idx)}
-                  className="flex w-full flex-col sm:flex-row sm:items-center justify-between p-6 text-left"
+          {jobs.length === 0 ? (
+            <div className="text-center py-12 rounded-xl border border-border bg-surface">
+              <p className="text-muted-foreground">No open positions right now. Check back soon!</p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {jobs.map((job, idx) => (
+                <div
+                  key={idx}
+                  className="overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:border-accent-500/20"
                 >
-                  <div>
-                    <h3 className="font-heading text-lg font-bold text-foreground">{job.title}</h3>
-                    <div className="mt-2 flex flex-wrap gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1"><Briefcase size={12} /> {job.department}</span>
-                      <span className="flex items-center gap-1"><MapPin size={12} /> {job.location}</span>
-                      <span className="flex items-center gap-1"><Clock size={12} /> {job.type}</span>
+                  <button
+                    onClick={() => setActiveJob(activeJob === idx ? null : idx)}
+                    className="flex w-full flex-col sm:flex-row sm:items-center justify-between p-6 text-left"
+                  >
+                    <div>
+                      <h3 className="font-heading text-lg font-bold text-foreground">{job.title}</h3>
+                      <div className="mt-2 flex flex-wrap gap-4 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1"><Briefcase size={12} /> {job.department}</span>
+                        <span className="flex items-center gap-1"><MapPin size={12} /> {job.location}</span>
+                        <span className="flex items-center gap-1"><Clock size={12} /> {job.type}</span>
+                      </div>
                     </div>
-                  </div>
-                  <span className="mt-4 sm:mt-0 text-sm font-semibold text-accent-600 dark:text-accent-400 hover:text-accent-500 inline-flex items-center gap-1.5 shrink-0">
-                    {activeJob === idx ? "Hide Details" : "View Details"}
-                    <ArrowRight size={14} className={`transition-transform duration-300 ${activeJob === idx ? "rotate-90" : ""}`} />
-                  </span>
-                </button>
+                    <span className="mt-4 sm:mt-0 text-sm font-semibold text-accent-600 dark:text-accent-400 hover:text-accent-500 inline-flex items-center gap-1.5 shrink-0">
+                      {activeJob === idx ? "Hide Details" : "View Details"}
+                      <ArrowRight size={14} className={`transition-transform duration-300 ${activeJob === idx ? "rotate-90" : ""}`} />
+                    </span>
+                  </button>
 
-                {activeJob === idx && (
-                  <div className="border-t border-border p-6 bg-muted/20">
-                    <p className="text-sm text-muted-foreground mb-6 leading-relaxed">{job.description}</p>
-                    <h4 className="font-heading text-sm font-semibold text-foreground mb-3">Requirements:</h4>
-                    <ul className="list-disc pl-5 space-y-2 mb-6 text-sm text-muted-foreground">
-                      {job.requirements.map((req, ridx) => (
-                        <li key={ridx}>{req}</li>
-                      ))}
-                    </ul>
-                    <a
-                      href="mailto:careers@vebtechno.com"
-                      className="inline-flex items-center justify-center rounded-lg bg-accent-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-700"
-                    >
-                      Apply Now
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  {activeJob === idx && (
+                    <div className="border-t border-border p-6 bg-muted/20">
+                      <p className="text-sm text-muted-foreground mb-6 leading-relaxed">{job.description}</p>
+
+                      {job.responsibilities.length > 0 && (
+                        <>
+                          <h4 className="font-heading text-sm font-semibold text-foreground mb-3">Responsibilities:</h4>
+                          <ul className="list-disc pl-5 space-y-2 mb-6 text-sm text-muted-foreground">
+                            {job.responsibilities.map((resp, ridx) => (
+                              <li key={ridx}>{resp}</li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+
+                      {job.requirements.length > 0 && (
+                        <>
+                          <h4 className="font-heading text-sm font-semibold text-foreground mb-3">Requirements:</h4>
+                          <ul className="list-disc pl-5 space-y-2 mb-6 text-sm text-muted-foreground">
+                            {job.requirements.map((req, ridx) => (
+                              <li key={ridx}>{req}</li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+
+                      <a
+                        href="mailto:careers@vebtechno.com"
+                        className="inline-flex items-center justify-center rounded-lg bg-accent-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-700"
+                      >
+                        Apply Now
+                      </a>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

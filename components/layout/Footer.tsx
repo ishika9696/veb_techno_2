@@ -65,7 +65,7 @@ export default function Footer() {
             </p>
 
             {/* Social Links — CSS hover instead of Framer Motion whileHover */}
-            <div className="mt-6 flex gap-2">
+            <div className="mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -73,9 +73,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-9 items-center justify-center gap-1.5 rounded-lg border border-border px-3 text-xs text-muted-foreground transition-all duration-200 hover:border-accent-500/50 hover:bg-accent-50 hover:text-accent-600 hover:scale-110 hover:-translate-y-0.5 active:scale-95 dark:hover:bg-accent-950 dark:hover:text-accent-400"
+                  className="inline-flex h-10 min-h-[40px] items-center justify-center gap-1.5 rounded-lg border border-border px-3.5 text-xs text-muted-foreground transition-all duration-200 hover:border-accent-500/50 hover:bg-accent-50 hover:text-accent-600 hover:scale-105 hover:-translate-y-0.5 active:scale-95 dark:hover:bg-accent-950 dark:hover:text-accent-400"
                 >
-                  <ExternalLink size={12} />
+                  <ExternalLink size={14} className="shrink-0" />
                   <span>{social.label}</span>
                 </a>
               ))}

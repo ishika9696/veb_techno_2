@@ -5,13 +5,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import SectionHeading from "@/components/shared/SectionHeading";
 import AnimatedCard from "@/components/shared/AnimatedCard";
-import projects from "@/content/projects.json";
 import { serviceCategories } from "@/lib/constants";
 import CTABanner from "@/components/sections/CTABanner";
 
-export default function PortfolioContent() {
+interface PortfolioProject {
+  slug: string;
+  title: string;
+  client: string;
+  category: string;
+  coverImage: string;
+  problem: string;
+  techStack: string[];
+}
+
+interface PortfolioContentProps {
+  projects: PortfolioProject[];
+}
+
+export default function PortfolioContent({ projects }: PortfolioContentProps) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
   const filteredProjects = activeCategory === "All"

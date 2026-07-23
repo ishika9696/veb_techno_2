@@ -1,23 +1,22 @@
-import fs from "fs";
-import path from "path";
 import Link from "next/link";
 import Image from "next/image";
-import matter from "gray-matter";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { formatDate } from "@/lib/utils";
-import AnimatedCard from "@/components/shared/AnimatedCard";
 import CTABanner from "@/components/sections/CTABanner";
+import { prisma } from "@/lib/prisma";
+
+export const revalidate = 60; // ISR: revalidate every 60 seconds
 
 export const metadata: Metadata = {
   title: "Blog",
   description: "Stay ahead with insights, guides, and trends in Software Engineering, Cloud Architecture, UI/UX design, and IT strategy from the Veb Techno team.",
 };
 
-interface BlogPostItem {
+interface PostListItem {
   slug: string;
   title: string;
-  date: string;
+  publishedAt: Date | null;
   author: string;
   excerpt: string;
   category: string;
@@ -26,35 +25,24 @@ interface BlogPostItem {
 }
 
 export default async function BlogPage() {
-  const postsDirectory = path.join(process.cwd(), "content", "blog");
-  let posts: BlogPostItem[] = [];
-
+  let posts: PostListItem[] = [];
   try {
-    if (fs.existsSync(postsDirectory)) {
-      const filenames = fs.readdirSync(postsDirectory);
-      posts = filenames
-        .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"))
-        .map((filename) => {
-          const filePath = path.join(postsDirectory, filename);
-          const fileContents = fs.readFileSync(filePath, "utf8");
-          const { data } = matter(fileContents);
-          const slug = filename.replace(/\.(mdx|md)$/, "");
-
-          return {
-            slug,
-            title: data.title || "Untitled",
-            date: data.date || "",
-            author: data.author || "Anonymous",
-            excerpt: data.excerpt || "",
-            category: data.category || "General",
-            coverImage: data.coverImage || "/images/placeholder.jpg",
-            readTime: data.readTime || "5 min read",
-          };
-        })
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    }
-  } catch (error) {
-    console.error("Error reading blog directory:", error);
+    posts = await prisma.blogPost.findMany({
+      where: { published: true },
+      orderBy: { publishedAt: "desc" },
+      select: {
+        slug: true,
+        title: true,
+        publishedAt: true,
+        author: true,
+        excerpt: true,
+        category: true,
+        coverImage: true,
+        readTime: true,
+      },
+    });
+  } catch (err) {
+    console.error("Failed to fetch blog posts from database:", err);
   }
 
   return (
@@ -89,21 +77,23 @@ export default async function BlogPage() {
             </div>
           ) : (
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <div key={post.slug} className="group">
                   <Link
                     href={`/blog/${post.slug}`}
                     className="block overflow-hidden rounded-xl border border-border bg-surface hover:shadow-lg transition-all duration-300 hover:border-accent-500/30"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image
+                      {post.coverImage && (
+                        <Image
                           src={post.coverImage}
                           alt={`${post.title} — ${post.category} article cover`}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                           sizes="(max-width: 768px) 100vw, 33vw"
-                          {...(posts.indexOf(post) === 0 ? { priority: true } : {})}
+                          {...(index === 0 ? { priority: true } : {})}
                         />
+                      )}
                       <div className="absolute left-3 top-3 rounded-full bg-accent-600/90 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
                         {post.category}
                       </div>
@@ -112,7 +102,7 @@ export default async function BlogPage() {
                       <div className="mb-3 flex items-center gap-4 text-xs text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <Calendar size={12} />
-                          {formatDate(post.date)}
+                          {post.publishedAt ? formatDate(post.publishedAt.toISOString()) : ""}
                         </span>
                         <span className="flex items-center gap-1">
                           <Clock size={12} />
