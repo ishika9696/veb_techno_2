@@ -9,8 +9,9 @@ import { prisma } from "@/lib/prisma";
 export const revalidate = 60; // ISR: revalidate every 60 seconds
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Stay ahead with insights, guides, and trends in Software Engineering, Cloud Architecture, UI/UX design, and IT strategy from the Veb Techno team.",
+  title: "Tech Insights & IT Strategy Blog",
+  description:
+    "Stay ahead with expert articles on software engineering, cloud architecture, Next.js best practices, cybersecurity, and product design from Veb Techno Inc.",
 };
 
 interface PostListItem {

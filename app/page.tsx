@@ -6,8 +6,15 @@ import TechStackShowcase from "@/components/sections/TechStackShowcase";
 import ProjectsShowcase from "@/components/sections/ProjectsShowcase";
 import BlogPreview from "@/components/sections/BlogPreview";
 import ProcessTimeline from "@/components/sections/ProcessTimeline";
+import type { Metadata } from "next";
 import { siteConfig } from "@/lib/constants";
 import faqData from "@/content/faq.json";
+
+export const metadata: Metadata = {
+  title: "Veb Techno Inc — Custom Software Engineering & Product Design Studio",
+  description:
+    "We architect, design, and build scalable web applications, mobile apps, and enterprise cloud solutions tailored for ambitious brands.",
+};
 
 /**
  * Below-fold heavy components are code-split with next/dynamic.

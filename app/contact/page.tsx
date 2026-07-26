@@ -4,8 +4,9 @@ import ContactForm from "@/components/shared/ContactForm";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Get in touch with the Veb Techno Inc team. Start a new project, evaluate tech stacks, or request a quote for IT solutions.",
+  title: "Contact Us — Technical Consultations & Project Quotes",
+  description:
+    "Get in touch with senior technical leads at Veb Techno Inc. Start a new project, evaluate tech stacks, or request a quote for custom IT solutions.",
 };
 
 const offices = [
