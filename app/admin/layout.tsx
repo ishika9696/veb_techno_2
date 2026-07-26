@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AdminLayoutClient from "@/components/admin/AdminLayoutClient";
 
 export const metadata: Metadata = {
   title: "Admin Panel | Veb Techno Inc",
@@ -10,9 +11,5 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="min-h-screen bg-muted/20">
-      {children}
-    </div>
-  );
+  return <AdminLayoutClient>{children}</AdminLayoutClient>;
 }

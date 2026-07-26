@@ -2,7 +2,6 @@
 
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
-import AdminShell from "@/components/admin/AdminShell";
 import RepeatableListInput from "@/components/admin/RepeatableListInput";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -49,10 +48,10 @@ export default function EditJobListingPage({ params }: { params: Promise<{ id: s
     finally { setSaving(false); }
   };
 
-  if (loading) return <AdminShell><div className="flex items-center justify-center py-12"><Loader2 size={24} className="animate-spin text-accent-500" /></div></AdminShell>;
+  if (loading) return <div className="flex items-center justify-center py-12"><Loader2 size={24} className="animate-spin text-accent-500" /></div>;
 
   return (
-    <AdminShell>
+    <div>
       <div className="mb-6">
         <Link href="/admin/careers" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"><ArrowLeft size={14} /> Back to listings</Link>
         <h1 className="font-heading text-2xl font-bold text-foreground">Edit Job Listing</h1>
@@ -94,6 +93,6 @@ export default function EditJobListingPage({ params }: { params: Promise<{ id: s
           {saving ? <><Loader2 size={16} className="animate-spin" /> Saving...</> : <><Save size={16} /> Update Listing</>}
         </button>
       </form>
-    </AdminShell>
+    </div>
   );
 }

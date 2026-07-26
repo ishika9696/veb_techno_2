@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import AdminShell from "@/components/admin/AdminShell";
 import ImageUploader from "@/components/admin/ImageUploader";
 import RepeatableListInput from "@/components/admin/RepeatableListInput";
 import MetricsInput from "@/components/admin/MetricsInput";
@@ -56,7 +55,7 @@ export default function NewPortfolioProjectPage() {
   const categories = ["Web Development", "Mobile App", "UI/UX Design", "Cloud & DevOps", "Cybersecurity", "Digital Marketing"];
 
   return (
-    <AdminShell>
+    <div>
       <div className="mb-6">
         <Link href="/admin/portfolio" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors">
           <ArrowLeft size={14} /> Back to projects
@@ -140,6 +139,6 @@ export default function NewPortfolioProjectPage() {
           {saving ? <><Loader2 size={16} className="animate-spin" /> Saving...</> : <><Save size={16} /> Save Project</>}
         </button>
       </form>
-    </AdminShell>
+    </div>
   );
 }

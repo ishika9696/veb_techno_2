@@ -2,7 +2,6 @@
 
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
-import AdminShell from "@/components/admin/AdminShell";
 import TiptapEditor from "@/components/admin/TiptapEditor";
 import ImageUploader from "@/components/admin/ImageUploader";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
@@ -73,16 +72,14 @@ export default function EditBlogPostPage({ params }: { params: Promise<{ id: str
 
   if (loading) {
     return (
-      <AdminShell>
-        <div className="flex items-center justify-center py-12">
-          <Loader2 size={24} className="animate-spin text-accent-500" />
-        </div>
-      </AdminShell>
+      <div className="flex items-center justify-center py-12">
+        <Loader2 size={24} className="animate-spin text-accent-500" />
+      </div>
     );
   }
 
   return (
-    <AdminShell>
+    <div>
       <div className="mb-6">
         <Link href="/admin/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors">
           <ArrowLeft size={14} /> Back to posts
@@ -156,6 +153,6 @@ export default function EditBlogPostPage({ params }: { params: Promise<{ id: str
           {saving ? <><Loader2 size={16} className="animate-spin" /> Saving...</> : <><Save size={16} /> Update Post</>}
         </button>
       </form>
-    </AdminShell>
+    </div>
   );
 }

@@ -2,7 +2,6 @@
 
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
-import AdminShell from "@/components/admin/AdminShell";
 import ImageUploader from "@/components/admin/ImageUploader";
 import RepeatableListInput from "@/components/admin/RepeatableListInput";
 import MetricsInput from "@/components/admin/MetricsInput";
@@ -70,11 +69,11 @@ export default function EditPortfolioProjectPage({ params }: { params: Promise<{
   const categories = ["Web Development", "Mobile App", "UI/UX Design", "Cloud & DevOps", "Cybersecurity", "Digital Marketing"];
 
   if (loading) {
-    return <AdminShell><div className="flex items-center justify-center py-12"><Loader2 size={24} className="animate-spin text-accent-500" /></div></AdminShell>;
+    return <div className="flex items-center justify-center py-12"><Loader2 size={24} className="animate-spin text-accent-500" /></div>;
   }
 
   return (
-    <AdminShell>
+    <div>
       <div className="mb-6">
         <Link href="/admin/portfolio" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors">
           <ArrowLeft size={14} /> Back to projects
@@ -153,6 +152,6 @@ export default function EditPortfolioProjectPage({ params }: { params: Promise<{
           {saving ? <><Loader2 size={16} className="animate-spin" /> Saving...</> : <><Save size={16} /> Update Project</>}
         </button>
       </form>
-    </AdminShell>
+    </div>
   );
 }

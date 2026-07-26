@@ -9,7 +9,6 @@ export async function POST(request: NextRequest) {
     const parsed = loginSchema.safeParse(body);
 
     if (!parsed.success) {
-      console.log("[LOGIN DEBUG] Validation failed:", parsed.error.flatten());
       return NextResponse.json(
         { error: "Invalid email or password" },
         { status: 400 }
@@ -17,14 +16,11 @@ export async function POST(request: NextRequest) {
     }
 
     const email = parsed.data.email.trim().toLowerCase();
-    const password = parsed.data.password.trim();
+    const password = parsed.data.password;
 
-    console.log(`[LOGIN DEBUG] Searching for user with email: "${email}"`);
     const user = await prisma.adminUser.findUnique({
       where: { email },
     });
-
-    console.log(`[LOGIN DEBUG] User found: ${!!user}`);
 
     if (!user) {
       return NextResponse.json(
@@ -34,7 +30,6 @@ export async function POST(request: NextRequest) {
     }
 
     const validPassword = await verifyPassword(password, user.hashedPassword);
-    console.log(`[LOGIN DEBUG] Password valid: ${validPassword}`);
 
     if (!validPassword) {
       return NextResponse.json(
@@ -44,11 +39,10 @@ export async function POST(request: NextRequest) {
     }
 
     await createSession(user.id, user.email);
-    console.log(`[LOGIN DEBUG] Session created successfully for ${user.email}`);
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("[LOGIN DEBUG] Unexpected login error:", err);
+    console.error("Login authentication error:", err);
     return NextResponse.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }

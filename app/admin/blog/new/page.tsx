@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import AdminShell from "@/components/admin/AdminShell";
 import TiptapEditor from "@/components/admin/TiptapEditor";
 import ImageUploader from "@/components/admin/ImageUploader";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
@@ -67,7 +66,7 @@ export default function NewBlogPostPage() {
   const categories = ["General", "IT Consulting", "Web Development", "Mobile App", "Cloud & DevOps", "UI/UX Design", "Cybersecurity"];
 
   return (
-    <AdminShell>
+    <div>
       <div className="mb-6">
         <Link href="/admin/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors">
           <ArrowLeft size={14} /> Back to posts
@@ -156,6 +155,6 @@ export default function NewBlogPostPage() {
           {saving ? <><Loader2 size={16} className="animate-spin" /> Saving...</> : <><Save size={16} /> Save Post</>}
         </button>
       </form>
-    </AdminShell>
+    </div>
   );
 }

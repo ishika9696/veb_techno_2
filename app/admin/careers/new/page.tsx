@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import AdminShell from "@/components/admin/AdminShell";
 import RepeatableListInput from "@/components/admin/RepeatableListInput";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -38,7 +37,7 @@ export default function NewJobListingPage() {
   };
 
   return (
-    <AdminShell>
+    <div>
       <div className="mb-6">
         <Link href="/admin/careers" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"><ArrowLeft size={14} /> Back to listings</Link>
         <h1 className="font-heading text-2xl font-bold text-foreground">New Job Listing</h1>
@@ -82,6 +81,6 @@ export default function NewJobListingPage() {
           {saving ? <><Loader2 size={16} className="animate-spin" /> Saving...</> : <><Save size={16} /> Save Listing</>}
         </button>
       </form>
-    </AdminShell>
+    </div>
   );
 }

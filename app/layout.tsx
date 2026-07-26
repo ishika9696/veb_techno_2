@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import SiteLayoutWrapper from "@/components/layout/SiteLayoutWrapper";
 import { siteConfig } from "@/lib/constants";
 import "./globals.css";
 
@@ -61,26 +60,8 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-surface font-body text-foreground antialiased">
         <ThemeProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <SiteLayoutWrapper>{children}</SiteLayoutWrapper>
         </ThemeProvider>
-
-        {/* ── Analytics Placeholder (disabled by default) ── */}
-        {/* 
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
-        */}
       </body>
     </html>
   );

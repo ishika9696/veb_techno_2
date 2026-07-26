@@ -2,7 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import { FileText, Briefcase, Users, LogOut, PenSquare, Eye } from "lucide-react";
+import { FileText, Briefcase, Users, PenSquare } from "lucide-react";
 
 export default async function AdminDashboard() {
   const session = await getSession();
@@ -23,41 +23,27 @@ export default async function AdminDashboard() {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="font-heading text-2xl font-bold text-foreground">Dashboard</h1>
-          <p className="text-sm text-muted-foreground mt-1">Welcome back, {session.email}</p>
-        </div>
-        <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-          >
-            <Eye size={14} /> View Site
-          </Link>
-          <form action="/api/admin/logout" method="POST">
-            <button
-              type="submit"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm font-medium text-muted-foreground hover:text-red-500 hover:border-red-200 hover:bg-red-50 dark:hover:bg-red-950 transition-colors"
-            >
-              <LogOut size={14} /> Logout
-            </button>
-          </form>
-        </div>
+    <div className="space-y-8">
+      {/* Page Header */}
+      <div>
+        <h1 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+          Dashboard
+        </h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          Welcome back, <span className="font-medium text-foreground">{session.email}</span>
+        </p>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+      {/* Stats Grid: 1 column on mobile, 2 on tablet, 4 on desktop */}
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
           <Link
             key={stat.label}
             href={stat.href}
-            className="rounded-xl border border-border bg-surface p-6 shadow-sm hover:shadow-md hover:border-accent-500/30 transition-all group"
+            className="rounded-xl border border-border bg-surface p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-accent-500/30 transition-all group"
           >
             <div className="flex items-center justify-between mb-3">
-              <stat.icon size={20} className={stat.color} />
+              <stat.icon size={22} className={stat.color} />
             </div>
             <p className="font-heading text-3xl font-bold text-foreground">{stat.value}</p>
             <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
@@ -65,15 +51,17 @@ export default async function AdminDashboard() {
         ))}
       </div>
 
-      {/* Quick Actions */}
-      <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
-        <h2 className="font-heading text-lg font-semibold text-foreground mb-4">Quick Actions</h2>
-        <div className="grid gap-3 sm:grid-cols-3">
+      {/* Quick Actions: Stack vertically on narrow screens */}
+      <div className="rounded-xl border border-border bg-surface p-5 sm:p-6 shadow-sm">
+        <h2 className="font-heading text-lg font-semibold text-foreground mb-4">
+          Quick Actions
+        </h2>
+        <div className="grid gap-3 grid-cols-1 md:grid-cols-3">
           <Link
             href="/admin/blog/new"
             className="flex items-center gap-3 rounded-lg border border-border p-4 hover:border-accent-500/30 hover:bg-accent-50/50 dark:hover:bg-accent-950/30 transition-colors"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-400">
               <FileText size={18} />
             </div>
             <div>
@@ -85,7 +73,7 @@ export default async function AdminDashboard() {
             href="/admin/portfolio/new"
             className="flex items-center gap-3 rounded-lg border border-border p-4 hover:border-accent-500/30 hover:bg-accent-50/50 dark:hover:bg-accent-950/30 transition-colors"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
               <Briefcase size={18} />
             </div>
             <div>
@@ -97,7 +85,7 @@ export default async function AdminDashboard() {
             href="/admin/careers/new"
             className="flex items-center gap-3 rounded-lg border border-border p-4 hover:border-accent-500/30 hover:bg-accent-50/50 dark:hover:bg-accent-950/30 transition-colors"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 text-purple-600 dark:bg-purple-950 dark:text-purple-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-100 text-purple-600 dark:bg-purple-950 dark:text-purple-400">
               <Users size={18} />
             </div>
             <div>
