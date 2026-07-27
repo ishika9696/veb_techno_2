@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { MapPin, Briefcase, Clock, ArrowRight, Star, Heart, Shield, Sparkles } from "lucide-react";
+import posthog from "posthog-js";
 import SectionHeading from "@/components/shared/SectionHeading";
 import AnimatedCard from "@/components/shared/AnimatedCard";
 import CTABanner from "@/components/sections/CTABanner";
 
 /* DEMO DATA: Replace benefits with real company benefits before launch */
+
 const benefits = [
   { icon: Star, title: "Premium Compensation", description: "Competitive salaries, annual profit sharing, and performance bonuses." },
   { icon: Heart, title: "Health & Wellness", description: "Comprehensive medical, dental, and vision insurance with 100% premium coverage." },
@@ -96,9 +98,17 @@ export default function CareersContent({ jobs }: CareersContentProps) {
                   className="overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:border-accent-500/20"
                 >
                   <button
-                    onClick={() => setActiveJob(activeJob === idx ? null : idx)}
+                    onClick={() => {
+                      if (activeJob !== idx) {
+                        posthog.capture("job_listing_viewed", { job: job.title, department: job.department });
+                        setActiveJob(idx);
+                      } else {
+                        setActiveJob(null);
+                      }
+                    }}
                     className="flex w-full flex-col sm:flex-row sm:items-center justify-between p-6 text-left"
                   >
+
                     <div>
                       <h3 className="font-heading text-lg font-bold text-foreground">{job.title}</h3>
                       <div className="mt-2 flex flex-wrap gap-4 text-xs text-muted-foreground">

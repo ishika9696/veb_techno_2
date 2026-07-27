@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import SiteLayoutWrapper from "@/components/layout/SiteLayoutWrapper";
+import PostHogProvider from "@/components/analytics/PostHogProvider";
 import { siteConfig } from "@/lib/constants";
 import "./globals.css";
 
@@ -59,10 +60,13 @@ export default function RootLayout({
       className={`${inter.variable} ${plusJakarta.variable}`}
     >
       <body className="min-h-screen bg-surface font-body text-foreground antialiased">
-        <ThemeProvider>
-          <SiteLayoutWrapper>{children}</SiteLayoutWrapper>
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider>
+            <SiteLayoutWrapper>{children}</SiteLayoutWrapper>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
 }
+

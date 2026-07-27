@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import posthog from "posthog-js";
 import { stats } from "@/lib/constants";
 
 const headlineWords = ["We", "Build", "Digital", "Products", "That", "Transform", "Businesses"];
@@ -106,6 +107,7 @@ export default function Hero() {
         >
           <Link
             href="/contact"
+            onClick={() => posthog.capture("cta_get_free_consultation_clicked", { location: "hero" })}
             className="group relative flex items-center gap-2 overflow-hidden rounded-xl bg-accent-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-accent-700 hover:shadow-glow-lg"
           >
             <span className="relative z-10">Get a Free Consultation</span>
@@ -119,6 +121,7 @@ export default function Hero() {
 
           <Link
             href="/portfolio"
+            onClick={() => posthog.capture("cta_view_our_work_clicked", { location: "hero" })}
             className="group flex items-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-accent-500/50 hover:bg-accent-50/50 dark:hover:bg-accent-950/50"
           >
             View Our Work

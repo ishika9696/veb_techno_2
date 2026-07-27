@@ -6,8 +6,10 @@ import { ArrowLeft } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 import CTABanner from "@/components/sections/CTABanner";
 import { prisma } from "@/lib/prisma";
+import { PortfolioProjectTracker } from "@/components/analytics/Trackers";
 
 export const revalidate = 60;
+
 
 interface PageProps {
   params: Promise<{ slug: string }> | { slug: string };
@@ -91,7 +93,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <div className="pt-24">
+      <PortfolioProjectTracker project={project.slug} title={project.title} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
 
       <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">

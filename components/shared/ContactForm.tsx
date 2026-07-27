@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import posthog from "posthog-js";
 import { contactFormSchema, type ContactFormValues } from "@/lib/validations";
 import { cn } from "@/lib/utils";
 
@@ -33,6 +34,7 @@ export default function ContactForm({ className }: ContactFormProps) {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Failed to send");
+      posthog.capture("contact_form_submitted");
       setStatus("success");
       reset();
       setTimeout(() => setStatus("idle"), 5000);
@@ -41,6 +43,7 @@ export default function ContactForm({ className }: ContactFormProps) {
       setTimeout(() => setStatus("idle"), 5000);
     }
   };
+
 
   const inputClasses =
     "w-full rounded-lg border border-border bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/20";

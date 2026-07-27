@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import posthog from "posthog-js";
 
 export default function CTABanner() {
   const ref = useRef<HTMLDivElement>(null);
@@ -66,6 +67,7 @@ export default function CTABanner() {
             >
               <Link
                 href="/contact"
+                onClick={() => posthog.capture("cta_get_free_consultation_clicked", { location: "cta_banner" })}
                 className="group flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-accent-700 shadow-lg transition-all duration-300 hover:bg-white/90 hover:shadow-xl"
               >
                 Start a Conversation
@@ -76,11 +78,13 @@ export default function CTABanner() {
               </Link>
               <Link
                 href="/portfolio"
+                onClick={() => posthog.capture("cta_view_our_work_clicked", { location: "cta_banner" })}
                 className="flex items-center gap-2 rounded-xl border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-white/60 hover:bg-white/10"
               >
                 See Our Work
               </Link>
             </motion.div>
+
           </div>
         </motion.div>
       </div>

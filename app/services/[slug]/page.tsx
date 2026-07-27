@@ -20,8 +20,10 @@ import services from "@/content/services.json";
 import projects from "@/content/projects.json";
 import { siteConfig } from "@/lib/constants";
 import CTABanner from "@/components/sections/CTABanner";
+import { ServicePageTracker } from "@/components/analytics/Trackers";
 
 /** Individual icon map — avoids importing the entire lucide-react barrel (~300KB) */
+
 const iconMap: Record<string, LucideIcon> = {
   Globe,
   Smartphone,
@@ -113,7 +115,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <div className="pt-24">
+      <ServicePageTracker service={service.slug} title={service.title} />
       {/* ── JSON-LD Structured Data ── */}
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
